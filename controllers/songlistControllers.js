@@ -9,7 +9,7 @@ const getFullSongList = (_req, res) => {
     })
     .catch((error) => {
       console.log(error);
-      res.status(404).send("Error retrieving entire song list");
+      res.status(400).send("Error retrieving entire song list");
     });
 };
 
@@ -24,11 +24,24 @@ const getFavorites = (req, res) => {
     .catch((error) => {
       console.log(error);
       res
-        .status(403)
+        .status(400)
         .send(
           "Sorry, there was an error getting your favorite songs. Try again later."
         );
     });
 };
 
-module.exports = { getFullSongList, getFavorites };
+const getSong = (req, res) => {
+  knex
+    .select("*")
+    .from("songlist")
+    .where("songlist.id", req.params.id)
+    .then((song) => {
+      res.json(song);
+    })
+    .catch((error) => {
+      res.stat;
+    });
+};
+
+module.exports = { getFullSongList, getFavorites, getSong };

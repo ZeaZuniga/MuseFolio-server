@@ -3,8 +3,7 @@ module.exports = [
     id: 1,
     title: "Merry Go Round LS",
     composer: "Joe Hisaishi",
-    url_path:
-      "http://localhost:8080/public/Merry%20Go%20Round%20LEAD%20SHEET.pdf",
+    url_path: "http://localhost:8080/public/Merry-Go-Round-LS.pdf",
     tags: "['Studio Ghibli', 'jazz', 'lead sheets']",
     favorite: false,
   },

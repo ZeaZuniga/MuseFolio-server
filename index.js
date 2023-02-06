@@ -8,6 +8,8 @@ app.get("/", songlistController.getFullSongList);
 
 app.get("/favorites", songlistController.getFavorites);
 
+app.get("/:id", songlistController.getSong);
+
 app.listen(8080, () => {
   console.log("You are now listening to port 8080 fm");
 });
