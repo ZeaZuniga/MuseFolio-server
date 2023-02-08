@@ -31,6 +31,24 @@ const getFavorites = (req, res) => {
     });
 };
 
+const getSearch = (req, res) => {
+  const input = req.body.search;
+  knex
+    .select("*")
+    .from("songlist")
+    .where("songlist.title", "like", `%${input}%`)
+    .orWhere("songlist.composer", "like", `%${input}%`)
+    .then((songs) => {
+      res.json(songs);
+    })
+    .catch((error) => {
+      console.log(error);
+      res
+        .status(400)
+        .send("Sorry, there was an error with your search request. Try again.");
+    });
+};
+
 const getSong = (req, res) => {
   knex
     .select("*")
@@ -76,4 +94,10 @@ const updateSong = (req, res) => {
     });
 };
 
-module.exports = { getFullSongList, getFavorites, getSong, updateSong };
+module.exports = {
+  getFullSongList,
+  getFavorites,
+  getSearch,
+  getSong,
+  updateSong,
+};

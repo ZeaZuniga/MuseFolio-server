@@ -11,6 +11,8 @@ app.get("/", songlistController.getFullSongList);
 
 app.get("/favorites", songlistController.getFavorites);
 
+app.get("/search", songlistController.getSearch);
+
 app.get("/:id", songlistController.getSong);
 
 app.put("/:id", songlistController.updateSong);
