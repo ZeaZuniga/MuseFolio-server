@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 const songlistController = require("./controllers/songlistControllers");
+const cors = require("cors");
 
-app.use(express.static("public"));
+app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
 app.get("/", songlistController.getFullSongList);
 
