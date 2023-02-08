@@ -32,12 +32,11 @@ const getFavorites = (req, res) => {
 };
 
 const getSearch = (req, res) => {
-  const input = req.body.search;
   knex
     .select("*")
     .from("songlist")
-    .where("songlist.title", "like", `%${input}%`)
-    .orWhere("songlist.composer", "like", `%${input}%`)
+    .where("songlist.title", "like", `%${req.query.search}%`)
+    .orWhere("songlist.composer", "like", `%${req.query.search}%`)
     .then((songs) => {
       res.json(songs);
     })
