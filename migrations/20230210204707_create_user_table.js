@@ -3,7 +3,7 @@ exports.up = function (knex) {
     .createTable("users", (table) => {
       table.increments("id").primary();
       table.string("user_name").notNullable();
-      table.string("user__password").notNullable();
+      table.string("user_password").notNullable();
     })
     .createTable("songList", (table) => {
       table.increments("id").primary();
@@ -17,6 +17,7 @@ exports.up = function (knex) {
         .unsigned()
         .notNullable()
         .references("id")
+        .inTable("users")
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
     });
