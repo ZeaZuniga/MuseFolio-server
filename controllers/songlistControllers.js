@@ -1,9 +1,10 @@
 const knex = require("knex")(require("../knexfile"));
 
-const getFullSongList = (_req, res) => {
+const getFullSongList = (req, res) => {
   knex
     .select("*")
     .from("songlist")
+    .where("songlist.user_id", req.query.user)
     .then((songs) => {
       res.json(songs);
     })
@@ -17,6 +18,7 @@ const getFavorites = (req, res) => {
   knex
     .select("*")
     .from("songlist")
+    .where("songlist.user_id", req.query.user)
     .where({ favorite: "1" })
     .then((songs) => {
       res.json(songs);
@@ -35,6 +37,7 @@ const getSearch = (req, res) => {
   knex
     .select("*")
     .from("songlist")
+    .where("songlist.user_id", req.query.user)
     .where("songlist.title", "like", `%${req.query.search}%`)
     .orWhere("songlist.composer", "like", `%${req.query.search}%`)
     .then((songs) => {
@@ -52,6 +55,7 @@ const getSong = (req, res) => {
   knex
     .select("*")
     .from("songlist")
+    .where("songlist.user_id", req.query.user)
     .where({ id: req.params.id })
     .then((song) => {
       res.json(song);
