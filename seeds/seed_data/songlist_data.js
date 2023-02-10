@@ -6,6 +6,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Merry-Go-Round-LS.pdf",
     tags: "['Studio Ghibli', 'jazz', 'lead sheets']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Misty.pdf",
     tags: "['jazz', 'lead sheets']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Sir-Duke.pdf",
     tags: "['classic soul']",
     favorite: true,
+    user_id: 1,
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/RLS_Come_Thou_Fount.pdf",
     tags: "['hymns']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/RLS_Great_Is_Thy_Faithfulness.pdf",
     tags: "['hymns']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 6,
@@ -47,6 +52,7 @@ module.exports = [
       "http://localhost:8080/public/RLS_Praise_Ye_The_Lord_The_Almighty.pdf",
     tags: "['hymns']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 7,
@@ -55,6 +61,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/RLS_Joyful_Joyful.pdf",
     tags: "['hymns']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 8,
@@ -63,6 +70,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/RLS_How_Great_Thou_Art.pdf",
     tags: "['hymns']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 9,
@@ -71,6 +79,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/RLS_Rejoice_The_Lord_Is_King.pdf",
     tags: "['hymns']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 10,
@@ -79,6 +88,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Simplemente_gracias.pdf",
     tags: "['tuba']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 11,
@@ -87,6 +97,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Superstition.pdf",
     tags: "['classic soul']",
     favorite: true,
+    user_id: 1,
   },
   {
     id: 12,
@@ -95,6 +106,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Tchaikovsky_1812Overture.pdf",
     tags: "['symphony']",
     favorite: true,
+    user_id: 1,
   },
   {
     id: 13,
@@ -103,6 +115,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Respighi_Fountains.pdf",
     tags: "['symphony']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 14,
@@ -111,6 +124,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Elgar-Enigma-Variations.pdf",
     tags: "['symphony']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 15,
@@ -119,6 +133,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Bruckner-Sym8.pdf",
     tags: "['symphony']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 16,
@@ -127,6 +142,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Berlioz_Damnation_of_Faust.pdf",
     tags: "['symphony']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 17,
@@ -135,6 +151,7 @@ module.exports = [
     url_path: "http://localhost:8080/public/Come_Thou_Fount_Guitar.pdf",
     tags: "['hymns']",
     favorite: false,
+    user_id: 1,
   },
   {
     id: 18,
@@ -143,5 +160,6 @@ module.exports = [
     url_path: "http://localhost:8080/public/Farraday_Fanfare.pdf",
     tags: "['symphony', 'self-composed']",
     favorite: true,
+    user_id: 1,
   },
 ];
