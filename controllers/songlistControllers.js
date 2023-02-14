@@ -1,5 +1,19 @@
 const knex = require("knex")(require("../knexfile"));
 
+const checkUser = (req, res) => {
+  knex
+    .select("id")
+    .from("users")
+    .where("users.user_name", req.body.username)
+    .where("users.user_password", req.body.password)
+    .then((details) => {
+      res.send(details);
+    })
+    .catch((error) => {
+      res.status(401).send("Error logging in.");
+    });
+};
+
 const getFullSongList = (req, res) => {
   knex
     .select("*")
@@ -9,7 +23,6 @@ const getFullSongList = (req, res) => {
       res.json(songs);
     })
     .catch((error) => {
-      console.log(error);
       res.status(400).send("Error retrieving entire song list");
     });
 };
@@ -24,7 +37,6 @@ const getFavorites = (req, res) => {
       res.json(songs);
     })
     .catch((error) => {
-      console.log(error);
       res
         .status(400)
         .send(
@@ -44,7 +56,6 @@ const getSearch = (req, res) => {
       res.json(songs);
     })
     .catch((error) => {
-      console.log(error);
       res
         .status(400)
         .send("Sorry, there was an error with your search request. Try again.");
@@ -61,7 +72,6 @@ const getSong = (req, res) => {
       res.json(song);
     })
     .catch((error) => {
-      console.log(error);
       res
         .status(400)
         .send("Sorry, there was an error getting this song. Try again later.");
@@ -70,7 +80,6 @@ const getSong = (req, res) => {
 
 const updateSong = (req, res) => {
   let song = req.body;
-  console.log("Incoming song edit:", song);
 
   knex
     .select("*")
@@ -88,7 +97,6 @@ const updateSong = (req, res) => {
       res.status(200).send("We received your put request! Let's party! :D");
     })
     .catch((error) => {
-      console.log(error);
       res
         .status(400)
         .send(
@@ -98,6 +106,7 @@ const updateSong = (req, res) => {
 };
 
 module.exports = {
+  checkUser,
   getFullSongList,
   getFavorites,
   getSearch,

@@ -8,6 +8,8 @@ app.use(cors());
 app.use(express.json());
 app.use("/public", express.static(path.join(__dirname, "public")));
 
+app.post("/user", songlistController.checkUser);
+
 app.get("/", songlistController.getFullSongList);
 
 app.get("/favorites", songlistController.getFavorites);
